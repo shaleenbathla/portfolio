@@ -4,4 +4,4 @@ The website uses templates,hbs,views,express.js,css,js,html and many other small
 This project is purely for educational and learning purposes.
 
 Use command : "npm install" to regenerate "node_modules" for further usage and execution.
-You will require "node" to be installed on the machine on which you wish to run this code.
+This project requires "node" to be installed on the machine on which you wish to execute/run this code
