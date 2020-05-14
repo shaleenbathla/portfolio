@@ -1,6 +1,6 @@
 # node3-weather-website
 Weather forecast website made in Node.JS
-The website uses templates,hbs and many other things in background in a scalable way to further evolve the project if required.
+The website uses templates,hbs,views,express and many other small components in background in a scalable way to further evolve the project if required.
 This project is purely for educational and learning purposes.
 
 Use command : "npm install" to regenerate "node_modules" for further usage and execution.
