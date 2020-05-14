@@ -1,0 +1,113 @@
+// import modules
+const path = require('path')
+const express = require('express')
+const hbs = require('hbs')
+
+// import utils
+const geocode = require('./utils/geocode')
+const forecast = require('./utils/forecast')
+
+const app = express()
+const port = process.env.PORT || 10000
+
+// defining paths for express config
+const incPath = path.join(__dirname, '../inc')
+const viewsPath = path.join(__dirname, '../templates/views')
+const partialsPath = path.join(__dirname, '../templates/partials')
+
+// set handlebars engine
+app.set('view engine', 'hbs')
+// set views dir path
+app.set('views', viewsPath)
+hbs.registerPartials(partialsPath)
+
+// set static dir
+app.use(express.static(incPath))
+
+app.get('', (req, res) => {
+    res.render('index', {
+        title : 'Weather app',
+        name  : 'Shaleen'
+    })
+})
+
+app.get('/about', (req, res) => {
+    res.render('about', {
+        title : 'About Me',
+        name  : 'Shaleen'
+    })
+})
+
+app.get('/contact', (req, res) => {
+    res.render('contact', {
+        title    : 'Contact',
+        name     : 'Shaleen',
+    })
+})
+
+app.get('/help', (req, res) => {
+    res.render('help', {
+        title    : 'Help',
+        name     : 'Shaleen',
+        helpText : 'This is some helpful text.'
+    })
+})
+
+app.get('/help/*', (req, res) => {
+    res.render('404', {
+        title        : 'ERROR 404',
+        name         : 'Shaleen',
+        errorMessage : 'Help article not found.'
+    })
+})
+
+app.get('/products', (req, res) => {
+    if (!req.query.search) {
+        return res.send({
+            error : 'No search term provided!'
+        })
+    }
+    console.log(req.query.search)
+    res.send({
+        products : []
+    })
+})
+
+app.get('/weather', (req, res) => {
+    if (!req.query.address) {
+        return res.send({
+            error : 'You must provide an address!'
+        })
+    }
+    geocode(req.query.address, (error, {latitude, longitude, location} = {}) => {
+        if (error) {
+            return res.send({
+                error
+            })
+        }
+        forecast(latitude,longitude,(error, forecastData) => {
+            if (error) {
+                return res.send({
+                    error
+                })
+            }
+            res.send({
+                address : req.query.address,
+                location,
+                forecast : forecastData
+            })
+        })
+    })
+})
+
+app.get('*', (req, res) => {
+    res.render('404', {
+        title        : 'ERROR 404',
+        name         : 'Shaleen',
+        errorMessage : 'Page not found.'
+    })
+})
+
+app.listen(port, () => {
+    console.log('Server is up on port ' + port)
+})

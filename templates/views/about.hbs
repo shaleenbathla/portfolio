@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+    <script src="https://kit.fontawesome.com/ae693b5da6.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./css/styleSheet.css" />
+  </head>
+  <body>
+    <div id="header">
+      <div class="container">
+        {{>header}}
+      </div>
+    </div>
+
+    <!---------------------------- About ---------------------------->
+    <div id="about">
+      <div class="container">
+        <div class="row">
+          <div class="about-col-1">
+            <img src="/img/me.png" alt="LinkedIn Profile Photo" />
+          </div>
+          <div class="about-col-2">
+            <h1 class="sub-title">About Me</h1>
+            <p>
+              👋 I'm a passionate software developer with a deep love for open-source
+              technologies and a relentless pursuit of efficiency in the world of computing.<br/>
+              💻 Expertise: I specialize in Kubernetes, Linux userspace, and virtualization software, 
+              optimizing systems for efficiency, scalability, and security.<br/>
+              🚀 Passion: I'm driven by the potential of cloud-native technology to transform how we work and live.<br/>
+              🌐 Open Source: An advocate for open source, I believe in the power of collaboration.<br/>
+              📚 Lifelong Learner: I'm committed to staying at the forefront of technology.<br/>
+              🤝 Let's Connect: I'm open to new collaborations and discussions on tech and innovation.
+            </p>
+
+            <div class="tab-titles">
+              <p class="tab-links active-link" onclick="opentab('skills')">
+                Skills
+              </p>
+              <p class="tab-links" onclick="opentab('experience')">
+                Experience
+              </p>
+              <p class="tab-links" onclick="opentab('education')">Education</p>
+            </div>
+            <div class="tab-contents active-tab" id="skills">
+              <ul>
+                <li><span>Programming Languages</span><br />C, C++, Python, Rust</li>
+                <li><span>Web Development</span><br />Web app Development</li>
+                <li>
+                  <span>App Development</span><br />Building Android/iOS apps
+                </li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="experience">
+              <ul>
+                <li><span>February 2026 - Current</span><br />Senior Systems Engineer at Service Now</li>
+                <li><span>July 2024 - February 2026</span><br />Systems Engineer at Service Now</li>
+                <li><span>October 2023 - July 2024</span><br />Senior Member of Technical Staff at Oracle India</li>
+                <li><span>July 2021 - October 2023</span><br />Member of Technical Staff at Oracle India</li>
+                <li><span>Jan 2019 - May 2020</span><br />SDE Intern at ComCode Technologies, Mohali, India</li>
+              </ul>
+            </div>
+            <div class="tab-contents" id="education">
+              <ul>
+                <li><span>2017 - 2021</span><br />B.Tech from NIT Kurukshetra</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="contact">
+      {{>footer}}
+    </div>
+
+    <!------------------------ scripts -------------------->
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+    </script>
+
+  </body>
+</html>
