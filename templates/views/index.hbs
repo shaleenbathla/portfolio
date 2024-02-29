@@ -10,51 +10,39 @@
     <link rel="stylesheet" href="./css/styleSheet.css" />
   </head>
   <body>
-    <div class="main-content">
-      <header>
-        <h1>{{title}}</h1>
-        <a href="/">Weather</a>
-        <a href="/about">About</a>
-        <a href="/help">Help</a>
-      </header>
-      <p>Use this service to get your weather!</p>
-      <form>
-        <input placeholder="Location">
-        <button>Search</button>
-      </form>
-      <p id="message-1"></p>
-      <p id="message-2"></p>
-    </div>
-
+    <!------------ Header ------------>
     <div id="header">
       <div class="container">
         {{>header}}
-        <div class="header-text">
-          <p>Senior Software Developer</p>
-          <h1>Hi, I'm <span>Shaleen</span><br />from India</h1>
-        </div>
       </div>
     </div>
 
-    <!------------ services ------------>
+    <!------------ Services ------------>
     <div id="services">
       <div class="container">
         <h1 class="sub-title">My Services</h1>
         <div class="services-list">
           <div>
             <i class="fa-solid fa-code"></i>
-            <h2>Web Development</h2>
+            <h2>Weather Service</h2>
             <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos
-              alias ipsum ipsam in nam facere incidunt quo consequatur. Deleniti
-              ex excepturi obcaecati explicabo reiciendis facere ducimus nostrum
-              error, dolore culpa!
+              To predict weather of an area from user input.
+              For geolocation, mapbox.com is used.
+              For weather prediction darksky.net is used.</p>
             </p>
+            <div class="main-content">
+              <form>
+                <input placeholder="Location">
+                <button>Search</button>
+              </form>
+              <p id="message-1"></p>
+              <p id="message-2"></p>
+            </div>
             <a href="#">Learn more</a>
           </div>
           <div>
             <i class="fa-solid fa-crop"></i>
-            <h2>System Administration</h2>
+            <h2>Notes Service</h2>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos
               alias ipsum ipsam in nam facere incidunt quo consequatur. Deleniti
@@ -65,7 +53,7 @@
           </div>
           <div>
             <i class="fa-brands fa-app-store-ios"></i>
-            <h2>Linux Userspace and Virtualization</h2>
+            <h2>Chat Service</h2>
             <p>
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos
               alias ipsum ipsam in nam facere incidunt quo consequatur. Deleniti
