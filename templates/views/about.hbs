@@ -1,16 +1,52 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>About</title>
-        <link rel="icon" href="/img/weather.png">
-        <link rel="stylesheet" href="./css/styles.css">
-    </head>
-    <body>
-        <div class="main-content">
-            {{>header}}
-            <p>This site was created by Shaleen Bathla.<br>It uses data from mapbox.com and darksky.net</p>
-            <img class="portrait" src="/img/me.jpg">
+  <head>
+    <title>About</title>
+    <link rel="icon" href="/img/weather.png">
+    <link rel="stylesheet" href="./css/styleSheet.css" />
+  </head>
+  <body>
+    <!---------------------------- about ------------------------>
+    <div id="about">
+      {{>header}}
+      <div class="container">
+        <p>Weather Service uses data from third-party APIs mapbox.com and darksky.net<br></p>
+        <img class="portrait" src="/img/me.jpg">
+        <p>A photo from my teenage years (yes it's temporary) (yes, I'll replace it :))</p>
+        {{>about}}
+      </div>
+    </div>
+
+    <!---------------------------- contact ------------------------>
+    <div id="contact">
+      <div class="container">
+        <div class="row">
+          <div class="contact-left">
+            <h1 class="sub-title">Contact Me</h1>
+            <p><i class="fa-solid fa-paper-plane"></i>shaleenbathla@gmail.com</p>
+            <p><i class="fa-solid fa-mobile-screen-button"></i>0123456789 (Ask me until I set up a virtual phone no.)</p>
+            <div class="social-icons">
+              <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
+              <a href=""><i class="fa-brands fa-square-x-twitter"></i></a>
+              <a href="https://instagram.com/shaleenbathla?igshid=OGQ5ZDc2ODk2ZA=="><i class="fa-brands fa-instagram"></i></a>
+              <a href="https://linkedin.com/in/shaleenbathla">
+                <i class="fa-brands fa-linkedin"></i>
+              </a>
+            </div>
+            <a href="" download class="btn btn2">Download CV</a>
+          </div>
+          <div class="contact-right">
+            <form>
+              <input type="text" name="Name" placeholder="Your Name" required />
+              <input type="email" name="email" placeholder="Your email" required />
+              <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+              <button type="submit" class="btn btn2">Submit</button>
+            </form>
+          </div>
         </div>
-        {{>footer}}
-    </body>
+      </div>
+      {{>footer}}
+    </div>
+
+  </body>
 </html>
