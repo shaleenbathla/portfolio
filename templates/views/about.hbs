@@ -74,23 +74,22 @@
       </div>
     </div>
 
-    <!---------------------------- contact ------------------------>
     <div id="contact">
       <div class="container">
         <div class="row">
           <div class="contact-left">
             <h1 class="sub-title">Contact Me</h1>
             <p><i class="fa-solid fa-paper-plane"></i>shaleenbathla@gmail.com</p>
-            <p><i class="fa-solid fa-mobile-screen-button"></i>0123456789 (Ask me until I set up a virtual phone no.)</p>
+            <p><i class="fa-solid fa-mobile-screen-button"></i>0123456789 (until I set up a virtual no :))</p>
             <div class="social-icons">
-              <a href="https://facebook.com"><i class="fa-brands fa-facebook"></i></a>
+              <a href="https://facebook.com/warner.strum"><i class="fa-brands fa-facebook"></i></a>
               <a href=""><i class="fa-brands fa-square-x-twitter"></i></a>
               <a href="https://instagram.com/shaleenbathla?igshid=OGQ5ZDc2ODk2ZA=="><i class="fa-brands fa-instagram"></i></a>
               <a href="https://linkedin.com/in/shaleenbathla">
                 <i class="fa-brands fa-linkedin"></i>
               </a>
             </div>
-            <a href="" download class="btn btn2">Download CV</a>
+            <a href="/img/my-cv.pdf" download class="btn btn2">Download CV</a>
           </div>
           <div class="contact-right">
             <form>
@@ -104,6 +103,23 @@
       </div>
       {{>footer}}
     </div>
+
+    <!------------------------ scripts -------------------->
+    <script>
+      var tablinks = document.getElementsByClassName("tab-links");
+      var tabcontents = document.getElementsByClassName("tab-contents");
+
+      function opentab(tabname) {
+        for (tablink of tablinks) {
+          tablink.classList.remove("active-link");
+        }
+        for (tabcontent of tabcontents) {
+          tabcontent.classList.remove("active-tab");
+        }
+        event.currentTarget.classList.add("active-link");
+        document.getElementById(tabname).classList.add("active-tab");
+      }
+    </script>
 
   </body>
 </html>
