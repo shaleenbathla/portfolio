@@ -14,6 +14,23 @@ body {
   color: #fff;
 }
 
+.weather-content {
+    flex-grow: 1;
+}
+
+.weather-input {
+    border : 1px solid #cccccc;
+    padding : 8px;
+}
+
+.weather-button {
+    cursor : pointer;
+    border : 1px solid #888888;
+    background : #888888;
+    color : white;
+    padding : 8px;
+}
+
 #header {
   width: 100%;
   height: 100vh;
