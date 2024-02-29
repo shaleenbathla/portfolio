@@ -18,12 +18,12 @@ body {
     flex-grow: 1;
 }
 
-#weather-input {
+.weather-input {
     border : 1px solid #cccccc;
     padding : 8px;
 }
 
-#weather-button {
+.weather-button {
     cursor : pointer;
     border : 1px solid #888888;
     background : #888888;
