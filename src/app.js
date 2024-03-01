@@ -7,7 +7,7 @@ const forecast = require('./utils/forecast')
 const app = express()
 const port = process.env.PORT || 10000
 
-//defining paths for express config
+// defining paths for express config
 const incPath = path.join(__dirname, '../inc')
 const viewsPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
@@ -19,21 +19,28 @@ hbs.registerPartials(partialsPath)
 // set static dir
 app.use(express.static(incPath))
 
-app.get('', (req,res) => {
+app.get('', (req, res) => {
     res.render('index', {
         title : 'Weather app',
         name  : 'Shaleen'
     })
 })
 
-app.get('/about', (req,res) => {
+app.get('/about', (req, res) => {
     res.render('about', {
         title : 'About Me',
         name  : 'Shaleen'
     })
 })
 
-app.get('/help', (req,res) => {
+app.get('/contact', (req, res) => {
+    res.render('contact', {
+        title    : 'Contact',
+        name     : 'Shaleen',
+    })
+})
+
+app.get('/help', (req, res) => {
     res.render('help', {
         title    : 'Help',
         name     : 'Shaleen',
@@ -41,7 +48,7 @@ app.get('/help', (req,res) => {
     })
 })
 
-app.get('/weather', (req,res) => { /* example.com/weather */
+app.get('/weather', (req, res) => {
     if (!req.query.address) {
         return res.send({
             error : 'You must provide an address!'
@@ -53,7 +60,7 @@ app.get('/weather', (req,res) => { /* example.com/weather */
                 error
             })
         }
-        forecast(latitude,longitude,(error,forecastData) => {
+        forecast(latitude, longitude, (error, forecastData) => {
             if (error) {
                 return res.send({
                     error

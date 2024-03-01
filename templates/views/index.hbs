@@ -1,25 +1,134 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <title>Weather</title>
-        <link rel="icon" href="/img/weather.png">
-        <link rel="stylesheet" href="./css/styles.css">
-    </head>
-    <body>
-        <div class="main-content">
-            {{>header}}
-            <p>Use this site to get your weather!</p>
-            <form>
-                <input placeholder="Location">
-                <button>Search</button>
-            </form>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shaleen Bathla</title>
+    <script src="https://kit.fontawesome.com/ae693b5da6.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="/img/weather.png" />
+    <link rel="stylesheet" href="./css/styleSheet.css" />
+  </head>
+  <body>
+    <!------------ Header ------------>
+    <div id="header">
+      <div class="container">
+        {{>header}}
+      </div>
+    </div>
 
-            <p id="message-1"></p>
-            <p id="message-2"></p>
-
+    <!------------ Services ------------>
+    <div id="services">
+      <div class="container">
+        <h1 class="sub-title">My Services</h1>
+        <div class="services-list">
+          <div>
+            <i class="fa-solid fa-code"></i>
+            <h2>Web Development</h2>
+            <p>
+              Node.js, Flask, HTML, CSS, Javascript
+            </p>
+            <a href="#">Learn more</a>
+          </div>
+          <div>
+            <i class="fa-solid fa-crop"></i>
+            <h2>Systems Development</h2>
+            <p>
+              Multi-threading, Operating Systems
+              Linux Userspace and Virtualization Development.
+              Userspace like : systemd, samba, etc
+              Virtualization like : libvirt, qemu, kvm etc
+            </p>
+            <a href="#">Learn more</a>
+          </div>
+          <div>
+            <i class="fa-brands fa-app-store-ios"></i>
+            <h2>System Design</h2>
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos
+              alias ipsum ipsam in nam facere incidunt quo consequatur. Deleniti
+              ex excepturi obcaecati explicabo reiciendis facere ducimus nostrum
+              error, dolore culpa!
+            </p>
+            <a href="#">Learn more</a>
+          </div>
         </div>
-        {{>footer}}
+      </div>
+    </div>
 
-        <script src="/js/app.js"></script>
-    </body>
+    <!---------------------------------- portfolio ----------------------------------->
+    <div id="portfolio">
+      <div class="container">
+        <h1 class="sub-title">My Work</h1>
+        <div class="work-list">
+          <div class="work">
+            <img src="/img/work-1.png" />
+            <div class="layer">
+              <h3>Weather App</h3>
+              <p>
+              See weather of any place across the world.
+              Geolocation : mapbox.com , Weather : darksky.net</p>
+              </p>
+              <div class="weather-content">
+                <form>
+                  <div class="weather-input">
+                    <input placeholder="Location">
+                  </div>
+                  <div class="weather-button">
+                    <button>Search</button>
+                  </div>
+                </form>
+                <p id="message-1"></p>
+                <p id="message-2"></p>
+              </div>
+              <a href="#"><i class="fa-solid fa-link"></i></a>
+            </div>
+          </div>
+
+          <div class="work">
+            <img src="/img/work-2.png" />
+            <div class="layer">
+              <h3>Notes App</h3>
+              <p>
+                Create, Delete, List your notes - Frontend under progress.
+                Stay tuned :)
+              </p>
+              <a href="#"><i class="fa-solid fa-link"></i></a>
+            </div>
+          </div>
+
+          <div class="work">
+            <img src="/img/work-3.png" />
+            <div class="layer">
+              <h3>Chat App</h3>
+              <p>
+                Other apps : Social Media App, Music App, Online Shopping App
+                The app connects you to the talented people around the world.
+                Download it from the Play Store
+              </p>
+              <a href="#"><i class="fa-solid fa-link"></i></a>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="btn">See More</a>
+      </div>
+    </div>
+
+    <div id="contact">
+      {{>footer}}
+    </div>
+
+    <!------------------ scripts --------------->
+    <script src="/js/app.js"></script>
+
+    <script>
+      var sidemenu = document.getElementById("sidemenu");
+      function openmenu() {
+        sidemenu.style.right = "0";
+      }
+      function closemenu() {
+        sidemenu.style.right = "-200px";
+      }
+    </script>
+
+  </body>
 </html>
