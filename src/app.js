@@ -12,8 +12,10 @@ const incPath = path.join(__dirname, '../inc')
 const viewsPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
 
-app.set('view engine', 'hbs') // set handlebars engine
-app.set('views', viewsPath) // set views dir path
+// set handlebars engine
+app.set('view engine', 'hbs')
+// set views dir path
+app.set('views', viewsPath)
 hbs.registerPartials(partialsPath)
 
 // set static dir
