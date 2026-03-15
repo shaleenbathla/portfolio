@@ -15,20 +15,21 @@ body {
 }
 
 .weather-content {
-    flex-grow: 1;
+  flex-grow: 1;
+  margin-top: 40px;
 }
 
 .weather-input {
-    border : 1px solid #cccccc;
-    padding : 8px;
+  border : 1px solid #cccccc;
+  padding : 8px;
 }
 
 .weather-button {
-    cursor : pointer;
-    border : 1px solid #888888;
-    background : #888888;
-    color : white;
-    padding : 8px;
+  cursor : pointer;
+  border : 1px solid #888888;
+  background : #888888;
+  color : white;
+  padding : 8px;
 }
 
 #header {
